@@ -1,7 +1,7 @@
 const express = require('express');
 const puppeteer = require('puppeteer');
 const app = express();
-const PORT = process.env.PORT || 3000; // Dynamische Portkonfiguration
+const PORT = process.env.PORT || 10000; // Dynamische Portkonfiguration
 
 // Funktion zum Absenden eines Formulars mit einer gegebenen Kennzeichennummer
 async function submitForm(kennzeichen) {
@@ -12,7 +12,7 @@ async function submitForm(kennzeichen) {
     const jahr = heute.getFullYear().toString();
 
     // Starten des Puppeteer-Browsers im Headless-Modus
-    const browser = await puppeteer.launch({ headless: "new" }); // geändert zu Headless-Modus
+    const browser = await puppeteer.launch({ headless: false }); // geändert zu Headless-Modus
     const page = await browser.newPage();
 
     // Hier bleibt der Rest Ihrer Funktion unverändert
@@ -61,7 +61,7 @@ async function submitForm(kennzeichen) {
     return resultText;
 }
 
-app.get('/check-license/:kennzeichen', async (req, res) => {
+app.get('/:kennzeichen', async (req, res) => {
     const kennzeichen = req.params.kennzeichen;
     try {
         const result = await submitForm(kennzeichen);
@@ -72,5 +72,5 @@ app.get('/check-license/:kennzeichen', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`https://test6-enps.onrender.com${PORT}`);
 });
