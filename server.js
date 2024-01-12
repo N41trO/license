@@ -12,7 +12,7 @@ async function submitForm(kennzeichen) {
     const jahr = heute.getFullYear().toString();
 
     // Starten des Puppeteer-Browsers im Headless-Modus
-    const browser = await puppeteer.launch({ headless: true }); // geändert zu Headless-Modus
+    const browser = await puppeteer.launch({ headless: "new" }); // geändert zu Headless-Modus
     const page = await browser.newPage();
 
     // Hier bleibt der Rest Ihrer Funktion unverändert
