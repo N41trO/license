@@ -1,0 +1,21 @@
+{
+  "name": "apikennzeichen",
+  "version": "1.0.0",
+  "description": "npm install express puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install express puppeteer"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "express",
+    "puppeteer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.7.0"
+  }
+}
